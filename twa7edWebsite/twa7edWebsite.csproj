@@ -226,6 +226,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-twa7edWebsite-20151112105746.mdf" />
+    <Content Include="App_Data\aspnet-twa7edWebsite-20151112105746_log.ldf">
+      <DependentUpon>aspnet-twa7edWebsite-20151112105746.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\css\bootstrap-rtl.min.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -480,9 +484,7 @@
     <Content Include="Views\Shared\_DisplayMassage.cshtml" />
     <Content Include="Views\Shared\_DisplayItems.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
