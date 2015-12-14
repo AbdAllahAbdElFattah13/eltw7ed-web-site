@@ -1,0 +1,49 @@
+﻿@model twa7edWebsite.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_backendLayout.cshtml";
+}
+@using (Html.BeginForm("Create", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="contact-form">
+        <div class="col span_1_of_3">
+            <h2 class="Arbic-Fonts">الصنف</h2>
+
+            <div>
+                <span>
+                    @Html.LabelFor(model => model.name)
+                    @Html.EditorFor(model => model.name)
+                    @Html.ValidationMessageFor(model => model.name)
+                </span>
+            </div>
+            <div>
+                <span class="Arbic-Fonts">
+                    @Html.LabelFor(model => model.imageName)
+                    <input type="file" name="file" />
+                    @Html.ValidationMessageFor(model => model.imageName)
+                </span>
+            </div>
+
+            <div>
+                <span class="Arbic-Fonts">
+                    @Html.LabelFor(model => model.description)
+                    @Html.TextAreaFor(model => model.description)
+                    @Html.ValidationMessageFor(model => model.description)
+                </span>
+            </div>
+            <div>
+                <span class="Arbic-Fonts"><input type="submit" value="إضافة"></span>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

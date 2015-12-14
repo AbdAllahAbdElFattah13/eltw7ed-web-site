@@ -1,0 +1,84 @@
+﻿@model twa7edWebsite.Models.ContactU
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="clear"> </div>
+<div class="wrap">
+    
+        <div class="section group">
+            <div class="col span_1_of_3">
+                <div class="contact_info">
+                    <h2>Find Us Here</h2>
+                    <div class="map">
+                        <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d863.3947153881932!2d31.254655164449677!3d30.048937711903694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840a2776f71a5%3A0x62a9694401cab716!2z2LPZhtiq2LEg2KfZhNiq2YjYrdmK2K8g2YTYo9iv2YjYp9iqINin2YTYqtis2YXZitmE!5e0!3m2!1sen!2seg!4v1449747569696"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+                    </div>
+                </div>
+                <div class="company_address">
+                    <h2>Company Information:</h2>
+                    <p>50 Al Obour buildings, </p>
+                    <p>Nasr city, Cairo</p>
+                    <p>EGYPT</p>
+                    <p>Phone:(00) 01227383484</p>
+                    <p>Phone:(00) 01121477700</p>
+                    <p>Email: <span>info@tawheed.com</span></p>
+                    <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+                </div>
+            </div>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="contact-form">
+                    <div class="col span_2_of_3">
+                        <h2>Contact Us</h2>
+                        <div>
+                            @*@Html.LabelFor(model => model.name)
+                                @Html.EditorFor(model => model.name)
+                                @Html.ValidationMessageFor(model => model.name)*@
+                            <span>@Html.LabelFor(model => model.name)</span>
+                            <span>
+                                @Html.EditorFor(model => model.name)
+                                @Html.ValidationMessageFor(model => model.name)
+                            </span>
+                        </div>
+                        <div>
+                            <span>@Html.LabelFor(model => model.email)</span>
+                            <span>
+                                @Html.EditorFor(model => model.email)
+                                @Html.ValidationMessageFor(model => model.email)
+                            </span>
+                        </div>
+                        <div>
+                            <span>@Html.LabelFor(model => model.mobile)</span>
+                            <span>
+                                @Html.EditorFor(model => model.mobile)
+                                @Html.ValidationMessageFor(model => model.mobile)
+                            </span>
+                        </div>
+                        <div>
+                            <span>@Html.LabelFor(model => model.subject)</span>
+                            <span>
+                                @Html.EditorFor(model => model.subject)
+                                @Html.ValidationMessageFor(model => model.subject)
+                            </span>
+                        </div>
+                        <div>
+                            <span>@Html.LabelFor(model => model.massage)</span>
+                            <span>
+                                @Html.TextAreaFor(model => model.massage)
+                                @Html.ValidationMessageFor(model => model.massage)
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <span><input type="submit" value="Send"></span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

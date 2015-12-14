@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_backendLayout.cshtml";
+}
+
+<div class="span9">
+    <div class="content">
+        <div class="btn-controls">
+            <div class="btn-box-row row-fluid">
+                <a href=@Url.Action("Create", "Items") class="btn-box big span4">
+                    <i class=" icon-random"></i>
+                    <p class="text-muted">
+                        <strong>إضافة منتج </strong>
+                    </p>
+                </a><a href=@Url.Action("Create", "Categories") class="btn-box big span4">
+                    <i class="icon-user"></i>
+                    <p class="text-muted">
+                        <strong>إضافة  </strong>
+                    </p>
+                </a><a href=@Url.Action("Index", "ContactUs") class="btn-box big span4">
+                    <i class="icon-money"></i>
+                    <p class="text-muted">
+                        <strong>عرض رسائل الموقع </strong>
+                    </p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!--/.content-->
+</div>
+<!--/.span9-->

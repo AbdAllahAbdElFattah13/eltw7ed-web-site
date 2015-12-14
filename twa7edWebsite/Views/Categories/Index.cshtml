@@ -1,0 +1,84 @@
+﻿@model IEnumerable<twa7edWebsite.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    var massage = TempData["AlertMessage"] ?? string.Empty;
+}
+
+<script type="text/javascript">
+    var _massage = '@massage';
+    if (_massage)
+        alert(_massage);
+</script>
+
+@foreach (var item in Model)
+{
+    <div class="wrap">
+
+        <h1>@item.name</h1>
+        <a href=@Url.Action("Details", new { id = item.ID })>
+            <img height="70%" src=@Url.Content("~/Images/Categories_Images/" + @item.imageName)>
+        </a>
+        <p>@item.description</p>
+        <br />
+
+    </div>
+}
+
+<style>
+    body {
+        color: #333;
+        font-size: 11px;
+        font-family: 'Open Sans', sans-serif;
+        color: #4A4A4A;
+        text-align: center;
+    }
+
+    .wrap {
+        width: 300px;
+        height: 310px;
+        margin: 20px auto;
+        display: inline-block;
+        padding: 20px;
+        cursor: default;
+        background: #fff url(http://tympanus.net/Tutorials/OriginalHoverEffects/images/bgimg.jpg) repeat;
+        -webkit-box-shadow: 0 5px 10px #666;
+        -moz-box-shadow: 0 5px 10px #666;
+        box-shadow: 0 5px 10px #666;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+        .wrap img {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+    p {
+        margin-top: 15px;
+        text-align: justify;
+    }
+
+    h1 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 5px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    a {
+        text-decoration: none;
+        color: #4A4A4A !important;
+    }
+
+        a:hover {
+            text-decoration: underline;
+            color: #6B6B6B !important;
+        }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: hsla(1, 44%, 46%, 0.85);
+    }
+</style>

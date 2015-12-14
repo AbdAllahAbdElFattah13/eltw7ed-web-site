@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var massage = TempData["AlertMessage"] ?? string.Empty;
+}
+
+<script type="text/javascript">
+    var _massage = '@massage';
+    if(_massage)
+        alert(_massage);
+</script>
+
+<head>
+    <title>Tawheed</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Javascript slider" />
+
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+    <link rel="stylesheet" type="text/css" href="engine3/style.css" />
+    <script type="text/javascript" src="engine3/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+</head>
+<body style="background-color:transparent;margin:auto">
+    <br>
+    <br>
+    <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
+    <div id="wowslider-container3">
+        <div class="ws_images">
+            <ul>
+                <li><img src="data3/images/chanellips1.jpg" alt="For your beauty" title="For your beauty" id="wows3_0" /></li>
+                <li><img src="data3/images/kerastraight.jpg" alt="Hair extensions & Keratin" title="Hair extensions & Keratin" id="wows3_1" /></li>
+                <li><img src="data3/images/tresseme.jpg" alt="Hair products" title="Hair products" id="wows3_2" /></li>
+                <li><img src="data3/images/esteelaudercosmeticsluxury.jpg" alt="Luxury cosmetics" title="Luxury cosmetics" id="wows3_3" /></li>
+                <li><img src="data3/images/guerlaincrazyparismakeupcollectionforholiday2013meteoritesandeyeshadows.jpg" alt="Makeup sets" title="Makeup sets" id="wows3_4" /></li>
+                <li><img src="data3/images/les_chaines_collection.jpg" alt="International brands" title="International brands" id="wows3_5" /></li>
+                <li><a href="http://wowslider.com/vi"><img src="data3/images/ps_cate_1433933114_248.jpg" alt="wordpress slider" title="Skin and body care" id="wows3_6" /></a></li>
+                <li><img src="data3/images/2013_12_25_news_guerlain_exceptional_perfume_collection.jpg" alt="Perfumes" title="Perfumes" id="wows3_7" /></li>
+            </ul>
+        </div>
+        <div class="ws_bullets">
+            <div>
+                <a href="#" title="For your beauty"><span><img src="data3/tooltips/chanellips1.jpg" alt="For your beauty" />1</span></a>
+                <a href="#" title="Hair extensions & Keratin"><span><img src="data3/tooltips/kerastraight.jpg" alt="Hair extensions & Keratin" />2</span></a>
+                <a href="#" title="Hair products"><span><img src="data3/tooltips/tresseme.jpg" alt="Hair products" />3</span></a>
+                <a href="#" title="Luxury cosmetics"><span><img src="data3/tooltips/esteelaudercosmeticsluxury.jpg" alt="Luxury cosmetics" />4</span></a>
+                <a href="#" title="Makeup sets"><span><img src="data3/tooltips/guerlaincrazyparismakeupcollectionforholiday2013meteoritesandeyeshadows.jpg" alt="Makeup sets" />5</span></a>
+                <a href="#" title="International brands"><span><img src="data3/tooltips/les_chaines_collection.jpg" alt="International brands" />6</span></a>
+                <a href="#" title="Skin and body care"><span><img src="data3/tooltips/ps_cate_1433933114_248.jpg" alt="Skin and body care" />7</span></a>
+                <a href="#" title="Perfumes"><span><img src="data3/tooltips/2013_12_25_news_guerlain_exceptional_perfume_collection.jpg" alt="Perfumes" />8</span></a>
+            </div>
+        </div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">javascript slider</a> by WOWSlider.com v8.2</div>
+        <div class="ws_shadow"></div>
+    </div>
+    <script type="text/javascript" src="engine3/wowslider.js"></script>
+    <script type="text/javascript" src="engine3/script.js"></script>
+    <!-- End WOWSlider.com BODY section -->
+    <br>  <br>
+    <br>
+</body>

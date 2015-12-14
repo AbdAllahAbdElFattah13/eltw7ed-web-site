@@ -1,0 +1,38 @@
+﻿@model twa7edWebsite.Models.ContactU
+
+<div class="contact-form">
+    <div class="col span_1_of_3">
+        <h2>تفاصيل الرسالة</h2>
+        <div>
+            <span>@Html.LabelFor(model => model.name)</span>
+            <span>
+                @Html.DisplayFor(model => model.name)
+                @Html.ValidationMessageFor(model => model.name)
+            </span>
+        </div>
+        <div>
+            <span>@Html.LabelFor(model => model.email)</span>
+            <span>
+                @Html.DisplayFor(model => model.email)
+            </span>
+        </div>
+        <div>
+            <span>@Html.LabelFor(model => model.mobile)</span>
+            <span>
+                @Html.DisplayFor(model => model.mobile)
+            </span>
+        </div>
+        <div>
+            <span>@Html.LabelFor(model => model.subject)</span>
+            <span>
+                @Html.DisplayFor(model => model.subject)
+            </span>
+        </div>
+        <div>
+            <span>@Html.LabelFor(model => model.massage)</span>
+            <span>
+                @Html.TextAreaFor(model => model.massage)
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@model twa7edWebsite.Models.Item
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_backendLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Create", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="contact-form">
+        <div class="col span_1_of_3">
+            <h2>المنتج</h2>
+
+            <div>
+                <span>
+                    @Html.LabelFor(model => model.name)
+                    @Html.EditorFor(model => model.name)
+                    @Html.ValidationMessageFor(model => model.name)
+                </span>
+            </div>
+            <div>
+                <span>
+                    @Html.LabelFor(model => model.imageName)
+                    <input type="file" name="file" />
+                    @Html.ValidationMessageFor(model => model.imageName)
+                </span>
+            </div>
+
+            <div>
+                <span>
+                    @Html.LabelFor(model => model.price)
+                    @Html.EditorFor(model => model.price)
+                    @Html.ValidationMessageFor(model => model.price)
+                </span>
+            </div>
+
+            <div>
+                <span>
+                    @Html.LabelFor(model => model.categoryID, "Category")
+                    @Html.DropDownList("categoryID", String.Empty)
+                    @Html.ValidationMessageFor(model => model.categoryID)
+                </span>
+            </div>
+            <div>
+                <span><input type="submit" value="إضافة"></span>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

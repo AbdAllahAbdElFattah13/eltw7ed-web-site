@@ -1,0 +1,69 @@
+﻿@model IEnumerable<twa7edWebsite.Models.ContactU>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_backendLayout.cshtml";
+}
+<div class="span9">
+    <div class="content">
+        <div class="module message">
+            <div class="module-head">
+                <h3>
+                    Message
+                </h3>
+            </div>
+            <div class="module-option clearfix">
+                <div class="pull-left">
+                </div>
+                <div class="pull-right">
+                    <a href="#" class="btn btn-primary">Compose</a>
+                </div>
+            </div>
+            <div class="module-body table">
+                <table class="table table-message">
+                    <tbody>
+                        <tr class="heading">
+                            <td class="cell-icon"></td>
+                            <td class="cell-author hidden-phone hidden-tablet">
+                                المُرسل
+                            </td>
+                            <td class="cell-title">
+                                الموضوع
+                            </td>
+                            <td class="cell-author hidden-phone hidden-tablet">
+                                البريد الإلكتروني
+                            </td>
+                            <td class="cell-icon hidden-phone hidden-tablet"></td>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="read">
+                                <td class="cell-icon"></td>
+                                <td class="cell-author hidden-phone hidden-tablet">
+                                    <i class="icon-paper-clip"></i>
+                                    @item.name
+                                </td>
+                                <td class="cell-icon hidden-phone hidden-tablet">
+                                    <i class="icon-paper-clip"></i>
+                                    @item.subject
+                                </td>
+                                <td class="cell-icon hidden-phone hidden-tablet">
+                                    @item.email
+                                </td>
+                                <td class="cell-title">
+                                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="module-foot">
+            </div>
+        </div>
+    </div>
+    <!--/.content-->
+</div>
+<!--/.span9-->

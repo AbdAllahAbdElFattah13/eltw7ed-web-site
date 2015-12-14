@@ -1,0 +1,9 @@
+﻿@model twa7edWebsite.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@Html.Partial("_DetailsForItemOrCategories", Model)
+
+@Html.Partial("_DisplayItems", Model.Items)

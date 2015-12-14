@@ -1,0 +1,14 @@
+﻿@model IEnumerable<twa7edWebsite.Models.Item>
+
+@{
+    ViewBag.Title = "Index";
+    var massage = TempData["AlertMessage"] ?? string.Empty;
+}
+
+<script type="text/javascript">
+    var _massage = '@massage';
+    if (_massage)
+        alert(_massage);
+</script>
+
+@Html.Partial("_DisplayItems", Model)
