@@ -31,6 +31,7 @@ namespace twa7edWebsite.Controllers
             Category category = db.Categories.Find(id);
             if (category == null)
             {
+
                 //return HttpNotFound(); //you might want to make a view to handle HTTPNotFound
                 return View("Error");
             }
