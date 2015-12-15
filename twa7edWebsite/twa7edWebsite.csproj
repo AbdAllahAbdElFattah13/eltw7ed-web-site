@@ -230,6 +230,11 @@
     <Content Include="App_Data\aspnet-twa7edWebsite-20151112105746_log.ldf">
       <DependentUpon>aspnet-twa7edWebsite-20151112105746.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap\css\_bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\css\_bootstrap.min.css" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\js\_bootstrap.min.js" />
     <Content Include="Content\css\bootstrap-rtl.css" />
     <Content Include="Content\css\bootstrap-rtl.min.css" />
     <Content Include="Content\css\bootstrap.css" />
