@@ -355,8 +355,10 @@
     <Content Include="Images\9.jpg" />
     <Content Include="Images\babyliss_logo.png" />
     <Content Include="Images\background.jpg" />
+    <Content Include="Images\bg.png" />
     <Content Include="Images\braun_logo.png" />
     <Content Include="Images\cat.jpg" />
+    <Content Include="Images\Categories_Images\30980_4613879395498_2099286922_n.jpg" />
     <Content Include="Images\cute.png" />
     <Content Include="Images\eyeliner.jpg" />
     <Content Include="Images\Guerlain_logo.png" />
@@ -366,6 +368,12 @@
     <Content Include="Images\hair_straightener.jpg" />
     <Content Include="Images\hair_straightener.png" />
     <Content Include="Images\hugo_boss_logo.png" />
+    <Content Include="Images\icons\css\font-awesome.css" />
+    <Content Include="Images\img.jpg" />
+    <Content Include="Images\Items_Images\1395821_726020550760264_1596145853_n.jpg" />
+    <Content Include="Images\Items_Images\1524730_257647954390658_1953015998_n.jpg" />
+    <Content Include="Images\Items_Images\artworks-000056538139-t1dq19-t500x500.jpg" />
+    <Content Include="Images\jquery-ui\picker.png" />
     <Content Include="Images\keratin.png" />
     <Content Include="Images\lacoste_logo.png" />
     <Content Include="Images\loreal_logo.png" />
@@ -375,6 +383,7 @@
     <Content Include="Images\Ralph_Lauren_logo.png" />
     <Content Include="Images\serum1.jpg" />
     <Content Include="Images\serum2.png" />
+    <Content Include="Images\user.png" />
     <Content Include="Images\Wella_logo.png" />
     <Content Include="Models\category_itemDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -389,6 +398,10 @@
       <DependentUpon>category_itemDB.edmx</DependentUpon>
       <LastGenOutput>category_itemDB.cs</LastGenOutput>
     </Content>
+    <Content Include="Images\icons\font\fontawesome-webfont3294.eot" />
+    <Content Include="Images\icons\font\fontawesome-webfont3294.ttf" />
+    <Content Include="Images\icons\font\fontawesome-webfont3294.woff" />
+    <Content Include="Images\icons\font\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\1_thumb.jpg" />
