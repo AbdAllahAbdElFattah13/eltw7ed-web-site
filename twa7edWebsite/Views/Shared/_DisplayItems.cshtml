@@ -5,7 +5,7 @@
     {
         <div class="grid_1_of_4 images_1_of_4 products-info" style="margin-left: 35px;">
             <a href=@Url.Action("Details", "Items", new { id = item.ID })>
-                <img src=@Url.Content("~/Images/Items_Images/" + @item.imageName) width="195" height="134" />
+                <img src=@Url.Content("~/Images/Items_Images/" + @item.imageName) />
             </a>
             <h4 class="item_name">@item.name</h4>
             <div class="priceh3">

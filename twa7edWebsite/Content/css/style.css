@@ -294,15 +294,19 @@ font-size:18px;
 }
 
 /*TODO: read what's beneth*/
-.images_1_of_4  img{
-	max-width:100%;
-	max-height:100%;
-	display:block;
-	padding-bottom: 8px;
-		padding-top: 8px;
-	
-	margin: 0 auto;
-	height:30%;
+.images_1_of_4 img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    
+    margin: 0 auto;
+    height: 179px;
+    width: 225px;
 }
 .images_1_of_4  h3{
 	color: #575757;
@@ -318,14 +322,12 @@ font-size:18px;
 		font-size:20px;
 		font-family:Arial, Helvetica, sans-serif;
         color:rgba(102,0,0,1);
-		letter-spacing:0.1em;
 }
 .images_1_of_4 h4:hover{
 	color: #575757;
 }
 
 .images_1_of_4 {
-	width:23.9%;
 	border: 1px solid rgb(233, 233, 233);
 	text-align: center;
 	padding: 1.5em 0px 0 0;
@@ -336,10 +338,10 @@ font-size:18px;
 	
 }
 .grid_1_of_4{
+    background: #fff url(http://tympanus.net/Tutorials/OriginalHoverEffects/images/bgimg.jpg) repeat;
 	display: block;
 	float:left;
 	margin: 1% 0 1% 1%;
-	
 }
 .grid_1_of_4 { 
 	margin-left: 10px; 
