@@ -1,8 +1,8 @@
 ﻿@{
-    System.Reflection.BindingFlags flags = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance;
+    //System.Reflection.BindingFlags flags = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance;
     Type type = Model.GetType();
     System.Reflection.PropertyInfo[] properties = type.GetProperties();
-    //Model = (type.Name == "Item" ? (twa7edWebsite.Models.Item) Model : (twa7edWebsite.Models.Category) Model);
+    var m = (type.Name == "Item" ? (dynamic)Model : (dynamic)Model);
     var imageSoruce = ((ViewBag.isItem == 1) ? Url.Content("~/Images/Items_Images") : Url.Content("~/Images/Categories_Images")) + "/" + Model.imageName;
 }
 
@@ -29,10 +29,12 @@
                             && property.Name != "categoryID" && property.Name != "Category")
                         {
                             <span>
-                                @property.Name
+                                <strong>
+                                    @Html.Label(property.Name)
+                                </strong>
                             </span>
                             <span>
-                                @property.GetValue(Model, null)
+                                @Html.Display(property.Name)
                             </span>
                         }
                     }

@@ -38,21 +38,26 @@ namespace twa7edWebsite.Models
     public partial class ContactU
     {
         [Required]
+        [Display(Name="Name:")]
         [MinLength(4), MaxLength(100)]
         public string name { get; set; }
 
         [Required]
+        [Display(Name="Email:")]
         [MinLength(4), MaxLength(100)]
         [EmailAddress(ErrorMessage="Enter a correct Email Address")]
         public string email { get; set; }
 
+        [Display(Name = "Mobile:")]
         public string mobile { get; set; }
 
         [Required]
+        [Display(Name="Subject:")]
         [MinLength(4), MaxLength(100)]
         public string subject { get; set; }
 
         [Required]
+        [Display(Name="Massage:")]
         [MinLength(4), MaxLength(100)]
         public string massage { get; set; }
     }

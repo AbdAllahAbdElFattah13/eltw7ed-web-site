@@ -4,34 +4,34 @@
     <div class="col span_1_of_3">
         <h2>تفاصيل الرسالة</h2>
         <div>
-            <span>@Html.LabelFor(model => model.name)</span>
+            <span> <strong> @Html.LabelFor(model => model.name)</strong></span>            
             <span>
                 @Html.DisplayFor(model => model.name)
                 @Html.ValidationMessageFor(model => model.name)
             </span>
         </div>
         <div>
-            <span>@Html.LabelFor(model => model.email)</span>
+            <span> <strong> @Html.LabelFor(model => model.email)</strong></span>
             <span>
                 @Html.DisplayFor(model => model.email)
             </span>
         </div>
         <div>
-            <span>@Html.LabelFor(model => model.mobile)</span>
+            <span> <strong> @Html.LabelFor(model => model.mobile)</strong></span>
             <span>
                 @Html.DisplayFor(model => model.mobile)
             </span>
         </div>
         <div>
-            <span>@Html.LabelFor(model => model.subject)</span>
+            <span> <strong> @Html.LabelFor(model => model.subject)</strong></span>
             <span>
                 @Html.DisplayFor(model => model.subject)
             </span>
         </div>
         <div>
-            <span>@Html.LabelFor(model => model.massage)</span>
+            <span> <strong> @Html.LabelFor(model => model.massage)</strong></span>
             <span>
-                @Html.TextAreaFor(model => model.massage)
+                @Model.massage
             </span>
         </div>
     </div>
