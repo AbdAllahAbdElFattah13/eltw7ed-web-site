@@ -12,7 +12,7 @@ namespace twa7edWebsite.Models
     {
         static public string formImageNameToImagePath(string imageName, string middleString)
         {
-            var path = Path.Combine(HostingEnvironment.MapPath("~/Images/" + @middleString), imageName);
+            var path = Path.Combine(HostingEnvironment.MapPath("~/App_Data/" + @middleString), imageName);
             return path;
         }
     }
