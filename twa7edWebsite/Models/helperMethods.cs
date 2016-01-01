@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Hosting;
+using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
 
 namespace twa7edWebsite.Models
 {
@@ -15,6 +18,64 @@ namespace twa7edWebsite.Models
             var path = Path.Combine(HostingEnvironment.MapPath("~/Images/" + @middleString), imageName);
             return path;
         }
+
+        private static string accessKey = "AKIAJBSKPAULFYKYYW3Q";
+        private static string secretKey = "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";
+ 
+        public static PutObjectResponse SaveImageToAmazon(String bucketName, HttpPostedFileBase file)
+        {
+            var fileName = Path.GetFileName(file.FileName);
+            Amazon.S3.IAmazonS3 client;
+            try
+            {
+                using (client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKey, secretKey, RegionEndpoint.USWest2))
+                {
+                    PutObjectRequest request = new PutObjectRequest()
+                    {
+                        BucketName = bucketName,
+                        CannedACL = S3CannedACL.PublicRead,
+                        Key = String.Format("{0}/{1}", bucketName, fileName),
+                        InputStream = file.InputStream
+                    };
+
+                    return client.PutObject(request);
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        
+        public static DeleteObjectResponse DeleteImageFromAmazon(String bucketName, String ImageName)
+        {
+            try
+            {
+                IAmazonS3 client;
+                client = new AmazonS3Client(Amazon.RegionEndpoint.USEast1);
+
+                DeleteObjectRequest deleteObjectRequest =
+                    new DeleteObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = ImageName
+                    };
+                using (client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKey, secretKey))
+                {
+                    return client.DeleteObject(deleteObjectRequest);
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static String ImageUrlFromBucketNameAndFileKey(String bucketName, String ImageName)
+        {
+            return String.Format("http://{0}.S3.amazonaws.com/{1}", bucketName, ImageName);
+        }
+
     }
 
     public static class HttpPostedFileBaseExtensions
@@ -95,4 +156,5 @@ namespace twa7edWebsite.Models
             return true;
         }
     }
+
 }

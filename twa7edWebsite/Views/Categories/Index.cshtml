@@ -17,7 +17,7 @@
 
         <h1>@item.name</h1>
         <a href=@Url.Action("Details", new { id = item.ID })>
-            <img height="70%" src=@Url.Content("~/Images/Categories_Images/" + @item.imageName)>
+            <img height="70%" src=@twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.categories.images", item.imageName)>
         </a>
         <p>@item.description</p>
         <br />

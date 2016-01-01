@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_backendLayout.cshtml";
 }
-@using (Html.BeginForm("Create", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Create", "Categories", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
