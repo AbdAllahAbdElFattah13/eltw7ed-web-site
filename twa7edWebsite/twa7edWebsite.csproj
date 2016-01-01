@@ -503,7 +503,10 @@
     <Content Include="Views\Shared\_DisplayMassage.cshtml" />
     <Content Include="Views\Shared\_DisplayItems.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\Categories_Images\" />
+    <Folder Include="App_Data\Items_Images\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
