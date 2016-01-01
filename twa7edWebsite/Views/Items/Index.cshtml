@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     var massage = TempData["AlertMessage"] ?? string.Empty;
+    TempData["AlertMessage"] = null;
 }
 
 <script type="text/javascript">

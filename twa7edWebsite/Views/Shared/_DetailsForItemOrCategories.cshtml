@@ -1,9 +1,8 @@
 ﻿@{
-    //System.Reflection.BindingFlags flags = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance;
     Type type = Model.GetType();
     System.Reflection.PropertyInfo[] properties = type.GetProperties();
     var m = (type.Name == "Item" ? (dynamic)Model : (dynamic)Model);
-    var imageSoruce = ((ViewBag.isItem == 1) ? twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("Items_Images", Model.imageName)
+    var imageSoruce = ((ViewBag.isItem == 1) ? twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.items.images", Model.imageName)
         : twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.categories.images", Model.imageName));
  }
 

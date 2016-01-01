@@ -52,15 +52,13 @@ namespace twa7edWebsite.Models
             try
             {
                 IAmazonS3 client;
-                client = new AmazonS3Client(Amazon.RegionEndpoint.USEast1);
-
                 DeleteObjectRequest deleteObjectRequest =
                     new DeleteObjectRequest
                     {
                         BucketName = bucketName,
                         Key = ImageName
                     };
-                using (client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKey, secretKey))
+                using (client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKey, secretKey, RegionEndpoint.USWest2))
                 {
                     return client.DeleteObject(deleteObjectRequest);
                 }
@@ -73,7 +71,8 @@ namespace twa7edWebsite.Models
 
         public static String ImageUrlFromBucketNameAndFileKey(String bucketName, String ImageName)
         {
-            return String.Format("http://{0}.S3.amazonaws.com/{1}", bucketName, ImageName);
+            //https://s3-us-west-2.amazonaws.com/tawyed.categories.images/tawyed.categories.images/9325989-makeup-powder-in-three-colors-on-white-background-Stock-Photo-cosmetics.jpg
+            return String.Format("https://s3-us-west-2.amazonaws.com/{0}/{0}/{1}", bucketName, ImageName);
         }
 
     }

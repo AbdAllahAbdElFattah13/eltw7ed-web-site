@@ -65,14 +65,12 @@ namespace twa7edWebsite.Controllers
 
                 PutObjectResponse response = helperMethods.SaveImageToAmazon("tawyed.categories.images", file);
                 
-                //var path = helperMethods.formImageNameToImagePath(fileName, "tawyed.categories.images");
                 category.imageName = fileName;
 
                 db.Categories.Add(category);
                 db.SaveChanges();
 
-                //file.SaveAs(path);
-                TempData["AlertMessage"] = "تم حفظ الصنف، شكرًا :)";
+               TempData["AlertMessage"] = "تم حفظ الصنف، شكرًا :)";
                 return RedirectToAction("Index");
             }
 
@@ -106,10 +104,7 @@ namespace twa7edWebsite.Controllers
                 var fileName = Path.GetFileName(file.FileName);
                 string prevImageName = ((string)Session["_prvImageName"]);
                 if (prevImageName != fileName)
-                {
-                    //get the path of the older image
-                    var path = helperMethods.formImageNameToImagePath(prevImageName, "tawyed.categories.images");
-                    
+                {   
                     //delete the older image
                     DeleteObjectResponse response = helperMethods.DeleteImageFromAmazon("tawyed.categories.images", prevImageName);
 
