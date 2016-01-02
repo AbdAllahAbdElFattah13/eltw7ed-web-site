@@ -5,8 +5,13 @@
     {
         <div class="grid_1_of_4 images_1_of_4 products-info" style="margin-left: 15px;">
             <a href=@Url.Action("Details", "Items", new { id = item.ID })>
+<<<<<<< HEAD
                 <img src=@twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.items.images", item.imageName) />
              </a>
+=======
+                <img src=@Url.Content("~/App_Data/Items_Images/" + @item.imageName) />
+            </a>
+>>>>>>> master
             <h4 class="item_name">@item.name</h4>
             <div class="priceh3">
                 <h3> @item.price </h3>
