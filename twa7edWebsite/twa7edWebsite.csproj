@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK">
+      <HintPath>..\packages\AWSSDK.2.3.53.0\lib\net45\AWSSDK.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -246,6 +249,8 @@
     <Content Include="Content\css\portfolio.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\_theme.css" />
+    <Content Include="Content\Jozoor_Font\Web_Font\font.css" />
+    <Content Include="Content\Jozoor_Font\Web_Font\font\AraJozoor-Regular.svg" />
     <Content Include="Content\label-bold.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -358,12 +363,14 @@
     <Content Include="Images\9.jpg" />
     <Content Include="Images\babyliss_logo.png" />
     <Content Include="Images\background.jpg" />
+    <Content Include="Images\background1.jpg" />
     <Content Include="Images\bg.png" />
     <Content Include="Images\braun_logo.png" />
     <Content Include="Images\cat.jpg" />
     <Content Include="Images\Categories_Images\30980_4613879395498_2099286922_n.jpg" />
     <Content Include="Images\cute.png" />
     <Content Include="Images\eyeliner.jpg" />
+    <Content Include="Images\favicon.png" />
     <Content Include="Images\Guerlain_logo.png" />
     <Content Include="Images\GUESS_logo.png" />
     <Content Include="Images\hair_dryer.jpg" />
@@ -405,6 +412,12 @@
     <Content Include="Images\icons\font\fontawesome-webfont3294.ttf" />
     <Content Include="Images\icons\font\fontawesome-webfont3294.woff" />
     <Content Include="Images\icons\font\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\Jozoor_Font\AraJozoor-Regular.otf" />
+    <Content Include="Content\Jozoor_Font\AraJozoor-Regular.ttf" />
+    <Content Include="Content\Jozoor_Font\Web_Font\font\AraJozoor-Regular.eot" />
+    <Content Include="Content\Jozoor_Font\Web_Font\font\AraJozoor-Regular.ttf" />
+    <Content Include="Content\Jozoor_Font\Web_Font\font\AraJozoor-Regular.woff" />
+    <Content Include="Content\Jozoor_Font\__MACOSX\._AraJozoor-Regular.ttf" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\1_thumb.jpg" />
@@ -481,7 +494,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_MyLayout.cshtml" />
     <Content Include="Views\Items\Index.cshtml" />

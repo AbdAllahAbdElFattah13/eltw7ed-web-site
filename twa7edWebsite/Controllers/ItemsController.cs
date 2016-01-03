@@ -7,6 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using twa7edWebsite.Models;
 using System.IO;
+using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
 
 namespace twa7edWebsite.Controllers
 {
@@ -60,16 +63,14 @@ namespace twa7edWebsite.Controllers
             if (ModelState.IsValid)
             {
                 var fileName = Path.GetFileName(file.FileName);
-                var path = helperMethods.formImageNameToImagePath(fileName, "Items_Images");
+
+                PutObjectResponse response = helperMethods.SaveImageToAmazon("tawyed.items.images", file);
                 item.imageName = fileName;
 
                 db.Items.Add(item);
                 db.SaveChanges();
               
-                file.SaveAs(path);
                 TempData["AlertMessage"] = "تم حفظ المنتج، شكرًا :)";
-
-                
                 return RedirectToAction("Index");
             }
 
@@ -107,15 +108,14 @@ namespace twa7edWebsite.Controllers
                 string prevImageName = ((string)Session["prvImageName"]);
                 if (prevImageName != fileName)
                 {
-                    //get the path of the older image
-                    var path = helperMethods.formImageNameToImagePath(prevImageName, "Items_Images");
                     //delete the older image
-                    System.IO.File.Delete(path);
+                    DeleteObjectResponse r = helperMethods.DeleteImageFromAmazon("tawyed.items.images", prevImageName);
 
                     //rename the imageName
                     item.imageName = fileName;
+
                     //save the new image
-                    file.SaveAs(path);
+                    PutObjectResponse response = helperMethods.SaveImageToAmazon("tawyed.items.images", file);
                 }
 
                 db.Entry(item).State = EntityState.Modified;

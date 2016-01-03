@@ -7,6 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using twa7edWebsite.Models;
 using System.IO;
+using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
 
 namespace twa7edWebsite.Controllers
 {
@@ -59,14 +62,15 @@ namespace twa7edWebsite.Controllers
             if (ModelState.IsValid)
             {
                 var fileName = Path.GetFileName(file.FileName);
-                var path = helperMethods.formImageNameToImagePath(fileName, "Categories_Images");
+
+                PutObjectResponse response = helperMethods.SaveImageToAmazon("tawyed.categories.images", file);
+                
                 category.imageName = fileName;
 
                 db.Categories.Add(category);
                 db.SaveChanges();
 
-                file.SaveAs(path);
-                TempData["AlertMessage"] = "تم حفظ الصنف، شكرًا :)";
+               TempData["AlertMessage"] = "تم حفظ الصنف، شكرًا :)";
                 return RedirectToAction("Index");
             }
 
@@ -100,17 +104,15 @@ namespace twa7edWebsite.Controllers
                 var fileName = Path.GetFileName(file.FileName);
                 string prevImageName = ((string)Session["_prvImageName"]);
                 if (prevImageName != fileName)
-                {
-                    //get the path of the older image
-                    var path = helperMethods.formImageNameToImagePath(prevImageName, "Categories_Images");
+                {   
                     //delete the older image
-                    System.IO.File.Delete(path);
+                    DeleteObjectResponse response = helperMethods.DeleteImageFromAmazon("tawyed.categories.images", prevImageName);
 
                     //rename the imageName
                     category.imageName = fileName;
-                    //save the new image
-                    file.SaveAs(path);
 
+                    //save the new image
+                    PutObjectResponse r2 = helperMethods.SaveImageToAmazon("tawyed.categories.images", file);
                 }
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
@@ -145,13 +147,13 @@ namespace twa7edWebsite.Controllers
                 return View("Error");
             }
             //get the path of the older image
-            var path = helperMethods.formImageNameToImagePath(category.imageName, "Categories_Images");
+            var path = helperMethods.formImageNameToImagePath(category.imageName, "tawyed.categories.images");
             //delete the older image
 
 
             db.Categories.Remove(category);
             db.SaveChanges();
-            System.IO.File.Delete(path);
+            DeleteObjectResponse r = helperMethods.DeleteImageFromAmazon("tawyed.categories.images", category.imageName);
             return RedirectToAction("Index");
         }
 

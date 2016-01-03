@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Hosting;
+using Amazon;
+using Amazon.S3;
+using Amazon.S3.Model;
 
 namespace twa7edWebsite.Models
 {
@@ -15,6 +18,63 @@ namespace twa7edWebsite.Models
             var path = Path.Combine(HostingEnvironment.MapPath("~/App_Data/" + @middleString), imageName);
             return path;
         }
+
+        private static string accessKey = "AKIAJBSKPAULFYKYYW3Q";
+        private static string secretKey = "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";
+ 
+        public static PutObjectResponse SaveImageToAmazon(String bucketName, HttpPostedFileBase file)
+        {
+            var fileName = Path.GetFileName(file.FileName);
+            Amazon.S3.IAmazonS3 client;
+            try
+            {
+                using (client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKey, secretKey, RegionEndpoint.USWest2))
+                {
+                    PutObjectRequest request = new PutObjectRequest()
+                    {
+                        BucketName = bucketName,
+                        CannedACL = S3CannedACL.PublicRead,
+                        Key = String.Format("{0}/{1}", bucketName, fileName),
+                        InputStream = file.InputStream
+                    };
+
+                    return client.PutObject(request);
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+        
+        public static DeleteObjectResponse DeleteImageFromAmazon(String bucketName, String ImageName)
+        {
+            try
+            {
+                IAmazonS3 client;
+                DeleteObjectRequest deleteObjectRequest =
+                    new DeleteObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = ImageName
+                    };
+                using (client = Amazon.AWSClientFactory.CreateAmazonS3Client(accessKey, secretKey, RegionEndpoint.USWest2))
+                {
+                    return client.DeleteObject(deleteObjectRequest);
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static String ImageUrlFromBucketNameAndFileKey(String bucketName, String ImageName)
+        {
+            //https://s3-us-west-2.amazonaws.com/tawyed.categories.images/tawyed.categories.images/9325989-makeup-powder-in-three-colors-on-white-background-Stock-Photo-cosmetics.jpg
+            return String.Format("https://s3-us-west-2.amazonaws.com/{0}/{0}/{1}", bucketName, ImageName);
+        }
+
     }
 
     public static class HttpPostedFileBaseExtensions
@@ -95,4 +155,5 @@ namespace twa7edWebsite.Models
             return true;
         }
     }
+
 }

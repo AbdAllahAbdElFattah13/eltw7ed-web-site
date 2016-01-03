@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     var massage = TempData["AlertMessage"] ?? string.Empty;
+    TempData["AlertMessage"] = null;
 }
 
 <script type="text/javascript">
@@ -17,8 +18,12 @@
 
         <h1>@item.name</h1>
         <a href=@Url.Action("Details", new { id = item.ID })>
+<<<<<<< HEAD
+            <img height="70%" src=@twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.categories.images", item.imageName)>
+=======
             @* helperMethods.formImageNameToImagePath(fileName, "Categories_Images"); *@
             <img height="70%" src=@twa7edWebsite.Models.helperMethods.formImageNameToImagePath(@item.imageName, "Categories_Images")>
+>>>>>>> master
         </a>
         <p>@item.description</p>
         <br />

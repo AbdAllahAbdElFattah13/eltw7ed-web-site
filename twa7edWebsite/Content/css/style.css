@@ -7,7 +7,7 @@ html
 
 body
 { font: normal 100% Arial, Helvetica, sans-serif;
-  background: #535353 url(/Images/background.jpg) repeat;
+  background: #535353 url(/Images/background1.jpg) fixed;
   color: #1D1D1D;}
 
 p
@@ -88,13 +88,19 @@ ol li
   height: 30px;
   padding: 5px 0 20px 40px;
   margin: 0 auto;
-  background: transparent;} 
-  
-#welcome H1
-{ font: normal 200% Arial, Helvetica, sans-serif;
-  color: #FFF;
-  letter-spacing: -3px;
-  text-shadow: 1px 1px #535353;}
+  background: transparent;}
+
+    #welcome H1 {
+    font-family: 'AraJozoor-Regular',Sans-Serif;
+    direction: rtl;
+    color: #FFF;
+    letter-spacing: -3px;
+    text-shadow: 1px 1px #535353;
+    font-size: -webkit-xxx-large;
+    float: left;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    }
   
 span
 { color: #098EFF;
@@ -124,17 +130,19 @@ ul#menu li
   background: transparent;}
 
 ul#menu li a
-{ font: normal 120% Arial, Helvetica;
-  float: left;
-  letter-spacing: -1px;
-  height: 30px;
-  padding: 15px 25px 10px 25px;
-  text-align: center;
-  color: #1D1D1D;
-  text-decoration: none;} 
+{
+    font: normal 150% "Comic Sans MS", cursive, sans-serif;
+    float: left;
+    letter-spacing: -1px;
+    height: 30px;
+    padding: 15px 25px 10px 25px;
+    text-align: center;
+    color: #1D1D1D;
+    text-decoration: none;
+} 
 
 ul#menu li a:hover
-{ color: #FFF;
+{ color: darkred;
   }
   
 ul#menu li.current a
@@ -529,10 +537,4 @@ font-size:18px;
 }
 .contact-form input[type="submit"]:active{
 	background-color:#F7503D;  
-}
-
-/*Boda styling*/
-.Arbic-Fonts {
-    font-family: Tahoma;
-    font-weight: bold;
 }
