@@ -1,5 +1,20 @@
-﻿label
-{
-    font-weight: 900;
-    font-size: medium;
+﻿label {
+    font-size: large;
+    font-family: 'AraJozoor-Regular',Sans-Serif;
+    direction: ltr;
 }
+
+.Arbic-Fonts {
+    font-family: 'AraJozoor-Regular',Sans-Serif;
+    direction: ltr;
+}
+
+    .Arbic-Fonts span {
+        font-family: 'AraJozoor-Regular',Sans-Serif;
+        direction: ltr;
+    }
+    .Arbic-Fonts input
+    {
+        font-family: 'AraJozoor-Regular',Sans-Serif;
+        direction: ltr;
+    }

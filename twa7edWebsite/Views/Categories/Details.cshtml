@@ -6,8 +6,11 @@
 
 @Html.Partial("_DetailsForItemOrCategories", Model)
 
-<div>
-    <p>All Items belong to this Category</p>
-</div>
+@if (Model.Items != null)
+{
+    <div class="contact-form">
+        <p>All Items belong to this Category</p>
+    </div>
 
-@Html.Partial("_DisplayItems", Model.Items)
+    @Html.Partial("_DisplayItems", Model.Items)
+}
