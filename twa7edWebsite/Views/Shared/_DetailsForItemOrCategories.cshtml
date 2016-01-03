@@ -2,14 +2,10 @@
     Type type = Model.GetType();
     System.Reflection.PropertyInfo[] properties = type.GetProperties();
     var m = (type.Name == "Item" ? (dynamic)Model : (dynamic)Model);
-<<<<<<< HEAD
+
     var imageSoruce = ((ViewBag.isItem == 1) ? twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.items.images", Model.imageName)
         : twa7edWebsite.Models.helperMethods.ImageUrlFromBucketNameAndFileKey("tawyed.categories.images", Model.imageName));
  }
-=======
-    var imageSoruce = ((ViewBag.isItem == 1) ? Url.Content("~/App_Data/Items_Images") : Url.Content("~/App_Data/Categories_Images")) + "/" + Model.imageName;
-}
->>>>>>> master
 
 <div class="clear"> </div>
 <div class="wrap">
